@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties — Sundance Retreats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- Custom cursor (copied from index.html) -->
+<div id="cur"></div>
+<div id="curR"></div>
+<div id="site-header">
+  <div class="navbar">
+    <a href="index.html" class="logo">
+      <img src="Assects/fav.png" alt="" height="40" width="40">
+      <div>
+        <span class="logo-name">Sundance Retreats</span>
+        <span class="logo-sub">&amp; Holidays</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#themes">Experiences</a>
+      <a href="https://www.sundanceholidaysretreat.com/event-list">Events</a>
+      <a href="https://www.sundanceholidaysretreat.com/blog">Blog</a>
+      <a href="properties.html" class="active">Properties</a>
+      <a href="index.html#contact" class="nav-cta">Plan a Trip</a>
+    </nav>
+  </div>
+</div>
+
+<main style="padding:80px 18px;">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:28px">
+      <div class="slabel">Stays & Villas</div>
+      <h2 class="sh">Our Properties (Sample Listings)</h2>
+      <p class="ssub">A short list of sample properties — dummy data for now.</p>
+    </div>
+    
+    <!-- Quick place buttons -->
+    <div style="text-align:center;margin-bottom:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#lonavla" class="btn-sun" style="padding:10px 18px;font-size:.9rem">Lonavla</a>
+      <a href="#goa" class="btn-sun" style="padding:10px 18px;font-size:.9rem">Goa</a>
+      <a href="#mumbai" class="btn-sun" style="padding:10px 18px;font-size:.9rem">Mumbai</a>
+      <a href="#all" class="btn-ghost" style="padding:10px 18px;font-size:.9rem">All Properties</a>
+    </div>
+
+    <!-- Anchored sections for each place -->
+    <div id="lonavla" style="margin-bottom:28px">
+      <div class="slabel">Lonavla</div>
+      <h3 class="sh" style="font-size:1.45rem;margin-bottom:12px">Properties in Lonavla</h3>
+      <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1505691723518-36a0df2f0b6b?w=900&q=80" alt="Lonavla 1"><span class="b-tag">Lonavla · Hillview</span></div>
+          <div class="b-body"><div class="b-date">Villa · 6 Guests</div><h3>Hilltop Villa</h3><p>Cozy villa with panoramic valley views and private bonfire area.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80" alt="Lonavla 2"><span class="b-tag">Lonavla · Farmstay</span></div>
+          <div class="b-body"><div class="b-date">Cottage · 4 Guests</div><h3>Rustic Farm Cottage</h3><p>Quiet farmhouse stay surrounded by green slopes — ideal for retreats.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="goa" style="margin-bottom:28px">
+      <div class="slabel">Goa</div>
+      <h3 class="sh" style="font-size:1.45rem;margin-bottom:12px">Properties in Goa</h3>
+      <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Goa 1"><span class="b-tag">Goa · Beachfront</span></div>
+          <div class="b-body"><div class="b-date">Villa · 8 Guests</div><h3>Seaside Villa</h3><p>Modern villa steps from the beach with private garden and sea views.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1505765050230-3fdfa3b69e7d?w=900&q=80" alt="Goa 2"><span class="b-tag">Goa · Jungle</span></div>
+          <div class="b-body"><div class="b-date">Cottage · 5 Guests</div><h3>Jungle Bungalow</h3><p>Quiet bungalow near spice farms and hidden beaches.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mumbai" style="margin-bottom:28px">
+      <div class="slabel">Mumbai</div>
+      <h3 class="sh" style="font-size:1.45rem;margin-bottom:12px">Properties in Mumbai</h3>
+      <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?w=900&q=80" alt="Mumbai 1"><span class="b-tag">Mumbai · City</span></div>
+          <div class="b-body"><div class="b-date">Apartment · 3 Guests</div><h3>City View Apartment</h3><p>Comfortable apartment in a central neighbourhood with easy transit access.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="bcard">
+          <div class="b-img"><img src="https://images.unsplash.com/photo-1505691723518-36a0df2f0b6b?w=900&q=80" alt="Mumbai 2"><span class="b-tag">Mumbai · Suburbs</span></div>
+          <div class="b-body"><div class="b-date">House · 6 Guests</div><h3>Suburban Villa</h3><p>Spacious family villa with garden and parking, close to highways.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anchor target for 'All Properties' — scrolls to existing grid -->
+    <div id="all"></div>
+    <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;">
+
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1501117716987-c8e6d6f4d2a1?w=900&q=80" alt="Property 1">
+          <span class="b-tag">Varanasi · Riverside</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Villa · 4 Guests</div>
+          <h3>Ganges View Villa</h3>
+          <p>A cosy riverside villa with terrace views of the Ganges. Ideal for small groups and spiritual stays.</p>
+          <a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1501117716987-c8e6d6f4d2a1?w=900&q=80&crop=faces" alt="Property 2">
+          <span class="b-tag">Rishikesh · Retreat</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Cottage · 6 Guests</div>
+          <h3>Himalayan Retreat Cottage</h3>
+          <p>A peaceful cottage near the river and yoga centres — perfect for wellness and meditation groups.</p>
+          <a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?w=900&q=80" alt="Property 3">
+          <span class="b-tag">Goa · Beachfront</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Villa · 8 Guests</div>
+          <h3>Sunny Beach Villa</h3>
+          <p>Bright beachfront villa with private garden and easy access to local markets and beaches.</p>
+          <a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap" style="padding:28px 0">
+    <div style="text-align:center;color:#999">© 2025 Sundance Retreats &amp; Holidays</div>
+  </div>
+</footer>
+
+<!-- Minimal JS: custom cursor + smooth anchor scroll -->
+<script>
+(function(){
+  const cur = document.getElementById('cur');
+  const curR = document.getElementById('curR');
+  let mx=0,my=0,rx=0,ry=0;
+  if(cur){
+    document.addEventListener('mousemove', e=>{mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'});
+    (function anim(){rx += (mx-rx)*0.11; ry += (my-ry)*0.11; if(curR){curR.style.left = rx + 'px'; curR.style.top = ry + 'px';} requestAnimationFrame(anim)})();
+    document.querySelectorAll('a, button, .bcard, .btn-sun, .btn-ghost').forEach(el=>{
+      el.addEventListener('mouseenter', ()=>document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', ()=>document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // Smooth scroll for anchors with header offset
+  const siteHdr = document.getElementById('site-header');
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      const target = document.querySelector(id);
+      if(target){
+        e.preventDefault();
+        const offset = (siteHdr ? siteHdr.offsetHeight : 0) + 16;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

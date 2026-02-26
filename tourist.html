@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky High Survival</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #70c5ce;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        canvas {
+            border: 4px solid #333;
+            background-color: #87CEEB;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .instructions {
+            position: absolute;
+            top: 10px;
+            color: white;
+            text-shadow: 2px 2px #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="instructions">
+    <h1>Sky Navigator</h1>
+    <p>Press <b>SPACE</b> or <b>CLICK</b> to fly the Plane</p>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+// Set Canvas Size
+canvas.width = 400;
+canvas.height = 600;
+
+// Game Constants
+const GRAVITY = 0.25;
+const JUMP = -4.5;
+const TOWER_WIDTH = 60;
+const TOWER_GAP = 160;
+const TOWER_SPEED = 2.5;
+
+// Game Variables
+let planeY = canvas.height / 2;
+let planeX = 50;
+let velocity = 0;
+let towers = [];
+let frameCount = 0;
+let score = 0;
+let gameOver = false;
+
+// Event Listeners
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") fly();
+});
+canvas.addEventListener("mousedown", fly);
+
+function fly() {
+    if (gameOver) {
+        resetGame();
+    } else {
+        velocity = JUMP;
+    }
+}
+
+function resetGame() {
+    planeY = canvas.height / 2;
+    velocity = 0;
+    towers = [];
+    score = 0;
+    frameCount = 0;
+    gameOver = false;
+    loop();
+}
+
+function createTower() {
+    // Random height for the top tower
+    let topHeight = Math.random() * (canvas.height / 2);
+    if (topHeight < 50) topHeight = 50;
+    
+    towers.push({
+        x: canvas.width,
+        top: topHeight
+    });
+}
+
+function drawPlane() {
+    ctx.fillStyle = "#f1c40f"; // Yellow Plane
+    // Body
+    ctx.fillRect(planeX, planeY, 35, 20);
+    // Tail
+    ctx.fillStyle = "#e67e22";
+    ctx.fillRect(planeX - 5, planeY + 2, 8, 10);
+    // Window
+    ctx.fillStyle = "#3498db";
+    ctx.fillRect(planeX + 22, planeY + 4, 8, 6);
+}
+
+function drawTowers() {
+    towers.forEach(t => {
+        ctx.fillStyle = "#7f8c8d"; // Gray Building color
+        
+        // Top Tower
+        ctx.fillRect(t.x, 0, TOWER_WIDTH, t.top);
+        // Windows on top tower
+        ctx.fillStyle = "#f1c40f";
+        for(let i=10; i < t.top; i+=20) {
+            ctx.fillRect(t.x + 10, i, 10, 10);
+            ctx.fillRect(t.x + 40, i, 10, 10);
+        }
+
+        // Bottom Tower
+        ctx.fillStyle = "#7f8c8d";
+        ctx.fillRect(t.x, t.top + TOWER_GAP, TOWER_WIDTH, canvas.height);
+        // Windows on bottom tower
+        ctx.fillStyle = "#f1c40f";
+        for(let i=t.top + TOWER_GAP + 10; i < canvas.height; i+=20) {
+            ctx.fillRect(t.x + 10, i, 10, 10);
+            ctx.fillRect(t.x + 40, i, 10, 10);
+        }
+    });
+}
+
+function update() {
+    if (gameOver) return;
+
+    velocity += GRAVITY;
+    planeY += velocity;
+
+    // Create towers every 90 frames
+    if (frameCount % 90 === 0) {
+        createTower();
+    }
+
+    towers.forEach((t, index) => {
+        t.x -= TOWER_SPEED;
+
+        // Collision Detection
+        if (
+            planeX + 35 > t.x && 
+            planeX < t.x + TOWER_WIDTH && 
+            (planeY < t.top || planeY + 20 > t.top + TOWER_GAP)
+        ) {
+            gameOver = true;
+        }
+
+        // Score increment
+        if (t.x + TOWER_WIDTH < planeX && !t.passed) {
+            score++;
+            t.passed = true;
+        }
+
+        // Remove off-screen towers
+        if (t.x + TOWER_WIDTH < 0) {
+            towers.splice(index, 1);
+        }
+    });
+
+    // Floor/Ceiling collision
+    if (planeY + 20 > canvas.height || planeY < 0) {
+        gameOver = true;
+    }
+
+    frameCount++;
+}
+
+function drawScore() {
+    ctx.fillStyle = "black";
+    ctx.font = "24px Arial";
+    ctx.fillText("Score: " + score, 20, 40);
+}
+
+function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    update();
+    drawTowers();
+    drawPlane();
+    drawScore();
+
+    if (!gameOver) {
+        requestAnimationFrame(loop);
+    } else {
+        ctx.fillStyle = "rgba(0,0,0,0.5)";
+        ctx.fillRect(0,0,canvas.width, canvas.height);
+        ctx.fillStyle = "white";
+        ctx.font = "40px Arial";
+        ctx.fillText("GAME OVER", 80, canvas.height / 2);
+        ctx.font = "20px Arial";
+        ctx.fillText("Click to Restart", 130, canvas.height / 2 + 50);
+    }
+}
+
+loop();
+</script>
+</body>
+</html>
