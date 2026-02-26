@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundance Retreats &amp; Holidays — Sacred India Journeys</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cur"></div>
+<div id="curR"></div>
+
+<!-- =====================================================
+     SITE HEADER (topbar + nav — one fixed block)
+====================================================== -->
+<div id="site-header">
+  <div class="topbar" id="topbar">
+    <div class="wrap">
+      <div class="tw">
+        <div class="tl">
+          <span><i class="fas fa-phone"></i><a href="tel:+918369140936">+91 8369140936</a></span>
+          <span><i class="fas fa-envelope"></i><a href="mailto:Aditya@sundanceholidaysretreat.com">Aditya@sundanceholidaysretreat.com</a></span>
+        </div>
+        <div class="tr">
+          <a href="https://www.facebook.com/share/15w5yHqNDK/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918369140936" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <a href="https://www.sundanceholidaysretreat.com" class="logo">
+      <img src="./Assets/fav.png" alt="" height="40px" width="40px">
+      <div>
+        <span class="logo-name">Sundance Retreats</span>
+        <span class="logo-sub">&amp; Holidays</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#themes">Experiences</a>
+      <a href="https://www.sundanceholidaysretreat.com/event-list">Events</a>
+      <a href="https://www.sundanceholidaysretreat.com/blog">Blog</a>
+      <a href="properties.html">Properties</a>
+      <a href="#contact" class="nav-cta">Plan a Trip</a>
+    </nav>
+  </div>
+</div>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="hero-content">
+      <div class="eyebrow">Curated India Journeys</div>
+      <h1>Travel the <em>Soul</em><br>of Sacred India</h1>
+      <p>From the divine ghats of Varanasi to the snow-kissed peaks of Himachal — we craft journeys that connect you to the timeless spirit of India.</p>
+      <div class="hero-actions">
+        <a href="#themes" class="btn-sun"><i class="fas fa-compass"></i> Explore Experiences</a>
+        <a href="#contact" class="btn-ghost"><i class="fas fa-phone"></i> Talk to Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero floating stats -->
+  <div class="hero-stats">
+    <div class="hstat"><span class="hval count-up" data-target="500">0</span><span class="hlbl">Happy Travellers</span></div>
+    <div class="hstat"><span class="hval count-up" data-target="25">0</span><span class="hlbl">Destinations</span></div>
+    <div class="hstat"><span class="hval count-up" data-target="98">0</span><span class="hlbl">% Satisfaction</span></div>
+  </div>
+
+  <div class="scroll-hint"><span></span></div>
+</section>
+
+<!-- =====================================================
+     DESTINATION MARQUEE
+====================================================== -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="m-item"><span class="m-dot"></span>Char Dham Yatra</div>
+    <div class="m-item"><span class="m-dot"></span>Rajasthan Heritage</div>
+    <div class="m-item"><span class="m-dot"></span>Rishikesh Retreat</div>
+    <div class="m-item"><span class="m-dot"></span>Varanasi Ghats</div>
+    <div class="m-item"><span class="m-dot"></span>Manali &amp; Shimla</div>
+    <div class="m-item"><span class="m-dot"></span>Kerala Backwaters</div>
+    <div class="m-item"><span class="m-dot"></span>Yoga &amp; Wellness</div>
+    <div class="m-item"><span class="m-dot"></span>Folk Music Escapes</div>
+    <div class="m-item"><span class="m-dot"></span>Udaipur Romance</div>
+    <div class="m-item"><span class="m-dot"></span>Spiti Valley</div>
+    <!-- duplicate for seamless loop -->
+    <div class="m-item"><span class="m-dot"></span>Char Dham Yatra</div>
+    <div class="m-item"><span class="m-dot"></span>Rajasthan Heritage</div>
+    <div class="m-item"><span class="m-dot"></span>Rishikesh Retreat</div>
+    <div class="m-item"><span class="m-dot"></span>Varanasi Ghats</div>
+    <div class="m-item"><span class="m-dot"></span>Manali &amp; Shimla</div>
+    <div class="m-item"><span class="m-dot"></span>Kerala Backwaters</div>
+    <div class="m-item"><span class="m-dot"></span>Yoga &amp; Wellness</div>
+    <div class="m-item"><span class="m-dot"></span>Folk Music Escapes</div>
+    <div class="m-item"><span class="m-dot"></span>Udaipur Romance</div>
+    <div class="m-item"><span class="m-dot"></span>Spiti Valley</div>
+  </div>
+</div>
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-imgs rev-l">
+        <div class="about-badge">
+          <span class="num">5+</span>
+          <span class="txt">Years of<br>Travel Magic</span>
+        </div>
+        <img class="about-main" src="./Assets/Vanrsi_ghats.jpg" alt="Varanasi Ghats">
+        <img class="about-float" src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=80" alt="Yoga Retreat">
+      </div>
+      <div class="rev-r">
+        <div class="slabel">Our Story</div>
+        <h2 class="sh">Bringing India's Sacred Heart to Life</h2>
+        <p class="ssub">Welcome to Sundance Retreats &amp; Holidays — your premier travel partner dedicated to the heritage-rich and spiritually vibrant destinations of India.</p>
+        <p class="ssub" style="margin-top:14px">Our thoughtfully organized cultural programs — yoga retreats, folk music events and heritage walks — offer a unique opportunity to immerse yourself in local traditions.</p>
+        <div class="about-feats stagger" style="--delay:0">
+          <div class="afeat"><i class="fas fa-award"></i><strong>Expert Curators</strong><span>Every itinerary handcrafted by specialists</span></div>
+          <div class="afeat"><i class="fas fa-shield-alt"></i><strong>Safe Travel</strong><span>Vetted stays &amp; trusted local partners</span></div>
+          <div class="afeat"><i class="fas fa-users"></i><strong>Custom Groups</strong><span>Solo, family &amp; large group packages</span></div>
+          <div class="afeat"><i class="fas fa-rupee-sign"></i><strong>Best Value</strong><span>Transparent pricing, zero hidden costs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PARALLAX BANNER 1 — Philosophy
+====================================================== -->
+<div class="pbanner" id="pbanner1">
+  <div class="pbg" id="pb1" style="background-image:url('https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?w=1800&q=80')"></div>
+  <div class="poverlay" style="background:linear-gradient(135deg,rgba(6,78,72,.88),rgba(22,22,20,.65))"></div>
+  <div class="pcontent rev">
+    <div class="slabel">Our Philosophy</div>
+    <h2 class="sh" style="color:#fff;font-size:clamp(2rem,4.5vw,3.6rem)">Travel is not just a <em style="color:#FFB45B;font-style:italic">destination</em>,<br>it's a transformation</h2>
+    <p class="ssub">Every journey we create is designed to move you — through landscapes, cultures and within yourself.</p>
+    <a href="#contact" class="btn-sun" style="margin:0 auto;display:inline-flex">Begin Your Journey</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     TRAVEL THEMES
+====================================================== -->
+<section class="themes" id="themes">
+  <div class="wrap">
+    <div class="themes-head">
+      <div class="rev-l">
+        <div class="slabel">What We Offer</div>
+        <h2 class="sh">Our Travel Experiences</h2>
+      </div>
+      <div class="rev-r">
+        <a href="#contact" class="btn-sun" style="font-size:.85rem;padding:12px 26px">Enquire &nbsp;<i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="tgrid stagger">
+      <div class="tcard">
+        <img src="https://images.unsplash.com/photo-1544461772-722f2f6df7fd?w=600&q=80" alt="Pilgrimage">
+        <div class="tover">
+          <div class="t-label">Pilgrimage</div>
+          <div class="t-count">Char Dham · Varanasi · Rishikesh</div>
+          <div class="t-arrow">Explore Tours <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Adventure">
+        <div class="tover">
+          <div class="t-label">Adventure</div>
+          <div class="t-count">Manali · Shimla · Spiti</div>
+          <div class="t-arrow">Explore Tours <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Heritage">
+        <div class="tover">
+          <div class="t-label">Heritage</div>
+          <div class="t-count">Rajasthan · Agra · Hampi</div>
+          <div class="t-arrow">Explore Tours <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Wellness">
+        <div class="tover">
+          <div class="t-label">Wellness</div>
+          <div class="t-count">Yoga · Ayurveda · Meditation</div>
+          <div class="t-arrow">Explore Tours <i class="fas fa-arrow-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     INSTAGRAM GRID
+====================================================== -->
+<section class="instagram">
+  <div class="wrap">
+    <div class="ihead rev">
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ihandle">
+        <i class="fab fa-instagram"></i> @sundanceretreatsholidays
+      </a>
+      <h2 class="sZZh" style="margin:0 auto 8px">Follow Our Journey</h2>
+      <p class="ssub" style="margin:0 auto;text-align:center">Real moments, real travellers — follow us for daily inspiration from sacred India</p>
+    </div>
+    <div class="igrid">
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale">
+        <video src="./Assets/vert_v5.mp4" autoplay muted loop playsinline></video>
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.1s">
+        <img src="./Assets/S6.png" alt="ig">
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.2s">
+        <img src="./Assets/S7.png" alt="ig">
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale" style="transition-delay:.3s">
+        <video src="./Assets/vert_v6.mp4" autoplay muted loop playsinline></video>
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.1s">
+        <img src="./Assets/S4.png" alt="ig">
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal tall rev-scale" style="transition-delay:.2s">
+        <video src="./Assets/vert_v7.mp4" autoplay muted loop playsinline></video>
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.3s">
+        <img src="./Assets/S5.png" alt="ig">
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+      <!-- FIXED: removed accidental "git add ." from src path -->
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale" style="transition-delay:.4s">
+        <video src="./Assets/vert_v4.mp4" autoplay muted loop playsinline></video>
+        <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:34px">
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ihandle">
+        <i class="fab fa-instagram"></i> View All on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TESTIMONIALS
+====================================================== -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="slabel">Traveller Stories</div>
+    <h2 class="sh">What Our Guests Say</h2>
+    <div class="tgrid2 stagger">
+      <div class="tcard2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">Thank you Sundance for the lovely holiday at Imagicaa...it was really magic. Everything went smoothly. recommend Sundance for every carefree, happy holiday.</p>
+        <div class="t-person">
+          <div class="t-av">P</div>
+          <div><div class="t-name">Preeti Kopikar</div><div class="t-from">Pune, Maharashtra</div></div>
+        </div>
+      </div>
+      <div class="tcard2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">It was nice experience in Goa Sundance Retreats Staff is nice 👍 cooperative I get there through the reference of my Friend 😉</p>
+        <div class="t-person">
+          <div class="t-av" style="background:linear-gradient(135deg,var(--sun),var(--sun2))">K</div>
+          <div><div class="t-name">Kaustubh Panchal</div><div class="t-from"></div></div>
+        </div>
+      </div>
+      <div class="tcard2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">They understood exactly what kind of stay we wanted and suggested beautiful villas in Lonavala with stunning views, clean rooms, and great hospitality.</p>
+        <div class="t-person">
+          <div class="t-av" style="background:linear-gradient(135deg,#7B1FA2,#E91E63)">A</div>
+          <div><div class="t-name">Aditya Kumar</div><div class="t-from">Mumbai, Maharashtra</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PARALLAX BANNER 2 — CTA
+====================================================== -->
+<div class="pbanner" id="pbanner2" style="height:380px">
+  <div class="pbg" id="pb2" style="background-image:url('https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?w=1800&q=80')"></div>
+  <div class="poverlay" style="background:linear-gradient(135deg,rgba(22,22,20,.84),rgba(232,130,12,.25))"></div>
+  <div class="pcontent rev" style="display:flex;align-items:center;gap:60px;flex-wrap:wrap;justify-content:center">
+    <div style="text-align:left">
+      <div class="slabel" style="color:#FFB45B;margin-bottom:12px">Ready to Travel?</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);text-align:left;color:#fff;font-family:'Cormorant Garamond',serif;font-weight:700">Let's Plan Your<br><em style="color:#FFB45B;font-style:italic">Dream Trip</em></h2>
+    </div>
+    <a href="#contact" class="btn-sun" style="font-size:1rem;padding:16px 42px;flex-shrink:0">Get a Free Quote</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     BLOG
+====================================================== -->
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="blog-head">
+      <div class="rev-l">
+        <div class="slabel">Travel Insights</div>
+        <h2 class="sh">From Our Blog</h2>
+      </div>
+      <div class="rev-r">
+        <a href="https://www.sundanceholidaysretreat.com/blog" class="btn-sun" style="font-size:.82rem;padding:11px 22px">All Posts &nbsp;<i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="bgrid stagger">
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1544461772-722f2f6df7fd?w=700&q=80" alt="blog">
+          <span class="b-tag">Pilgrimage</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Jan 2025 · 5 min read</div>
+          <h3>Everything You Need Before the Char Dham Yatra</h3>
+          <p>A complete guide covering best season, registration tips and how to stay safe on this sacred pilgrimage.</p>
+          <a href="https://www.sundanceholidaysretreat.com/blog" class="b-read">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=700&q=80" alt="blog">
+          <span class="b-tag">Heritage</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Dec 2024 · 4 min read</div>
+          <h3>7 Hidden Gems of Rajasthan Every Traveller Must See</h3>
+          <p>Beyond Jaipur and Jodhpur lie lesser-known treasures waiting to be explored across the golden state.</p>
+          <a href="https://www.sundanceholidaysretreat.com/blog" class="b-read">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="b-img">
+          <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=700&q=80" alt="blog">
+          <span class="b-tag">Wellness</span>
+        </div>
+        <div class="b-body">
+          <div class="b-date">Nov 2024 · 6 min read</div>
+          <h3>Why a Yoga Retreat in Rishikesh Can Transform Your Life</h3>
+          <p>From sunrise meditation by the Ganges to evening Aarti — Rishikesh is the yoga capital of the world.</p>
+          <a href="https://www.sundanceholidaysretreat.com/blog" class="b-read">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="rev-l">
+        <div class="slabel">Get In Touch</div>
+        <h2 class="sh">Start Your Extraordinary Journey</h2>
+        <p class="ssub">Talk to our expert travel consultants. We'll craft a personalised itinerary that matches your dream, budget and dates — completely free.</p>
+        <div class="cinfo-list">
+          <div class="ci-item">
+            <div class="ci-ico"><i class="fas fa-phone"></i></div>
+            <div class="ci-text"><strong>Call Us</strong><a href="tel:+918369140936">+91 8369140936</a></div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ico"><i class="fas fa-envelope"></i></div>
+            <div class="ci-text"><strong>Email</strong><a href="mailto:Aditya@sundanceholidaysretreat.com">Aditya@sundanceholidaysretreat.com</a></div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="ci-text"><strong>Office</strong><span>32, 36 Aditya Industrial Estate, Near Evershine Mall, Malad West, Mumbai – 400064</span></div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ico"><i class="fas fa-clock"></i></div>
+            <div class="ci-text"><strong>Hours</strong><span>Mon–Sat: 9:00 AM – 7:00 PM</span></div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/15w5yHqNDK/" target="_blank" class="soc fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="soc ig"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918369140936" target="_blank" class="soc wa"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="cform rev-r">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="Rahul"></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Sharma"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="rahul@example.com"></div>
+        <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"></div>
+        <div class="fg">
+          <label>I'm Interested In</label>
+          <select>
+            <option>Select an experience...</option>
+            <option>Char Dham Yatra</option>
+            <option>Rajasthan Heritage Tour</option>
+            <option>Lonavla</option>
+            <option>Goa</option>
+            <option>Himalayan Adventure</option>
+            <option>Yoga &amp; Wellness Retreat</option>
+            <option>Kerala Backwaters</option>
+            <option>Custom Itinerary</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea rows="4" placeholder="Tell us your travel dates, group size and any special requirements..."></textarea></div>
+        <button class="fsub" id="formBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="https://www.sundanceholidaysretreat.com" class="logo" style="display:inline-flex;margin-bottom:14px">
+          <div class="logo-mark"><i class="fas fa-sun"></i></div>
+          <div><span class="logo-name" style="color:#fff">Sundance Retreats</span><span class="logo-sub">&amp; Holidays</span></div>
+        </a>
+        <p>Your premier travel partner for sacred, heritage and wellness journeys across India. Creating unforgettable experiences since 2020.</p>
+        <div class="socials" style="margin-top:22px">
+          <a href="https://www.facebook.com/share/15w5yHqNDK/" target="_blank" class="soc fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="soc ig"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918369140936" target="_blank" class="soc wa"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#themes">Experiences</a></li>
+          <li><a href="https://www.sundanceholidaysretreat.com/event-list">Events</a></li>
+          <li><a href="https://www.sundanceholidaysretreat.com/blog">Blog</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+918369140936"><i class="fas fa-phone" style="color:var(--sun);margin-right:7px"></i>+91 8369140936</a></li>
+          <li><a href="mailto:Aditya@sundanceholidaysretreat.com"><i class="fas fa-envelope" style="color:var(--sun);margin-right:7px"></i>Email Us</a></li>
+          <li><a href="https://wa.me/918369140936"><i class="fab fa-whatsapp" style="color:#25D366;margin-right:7px"></i>WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/sundanceretreatsholidays"><i class="fab fa-instagram" style="color:#E1306C;margin-right:7px"></i>Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2025 Sundance Retreats &amp; Holidays. All rights reserved.</div>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+(function() {
+'use strict';
+
+/* ── CUSTOM CURSOR ── */
+const cur  = document.getElementById('cur');
+const curR = document.getElementById('curR');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px';
+  cur.style.top  = my + 'px';
+});
+
+(function animCursor() {
+  rx += (mx - rx) * 0.11;
+  ry += (my - ry) * 0.11;
+  curR.style.left = rx + 'px';
+  curR.style.top  = ry + 'px';
+  requestAnimationFrame(animCursor);
+})();
+
+document.querySelectorAll('a, button, .tcard, .bcard, .ipost, .afeat').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+});
+
+/* ── HEADER: topbar slides away on scroll ── */
+const siteHdr = document.getElementById('site-header');
+const topbar  = document.getElementById('topbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    topbar.classList.add('gone');
+    siteHdr.classList.add('compact');
+  } else {
+    topbar.classList.remove('gone');
+    siteHdr.classList.remove('compact');
+  }
+}, { passive: true });
+
+/* ── PARALLAX ── */
+const heroBg   = document.getElementById('heroBg');
+const pb1      = document.getElementById('pb1');
+const pb2      = document.getElementById('pb2');
+const banner1  = document.getElementById('pbanner1');
+const banner2  = document.getElementById('pbanner2');
+
+function doParallax() {
+  const s = window.scrollY;
+  if (heroBg) heroBg.style.transform = `translateY(${s * 0.38}px)`;
+  if (pb1 && banner1) {
+    const rect = banner1.getBoundingClientRect();
+    pb1.style.transform = `translateY(${-rect.top * 0.2}px)`;
+  }
+  if (pb2 && banner2) {
+    const rect = banner2.getBoundingClientRect();
+    pb2.style.transform = `translateY(${-rect.top * 0.2}px)`;
+  }
+}
+
+window.addEventListener('scroll', doParallax, { passive: true });
+doParallax();
+
+/* ── SCROLL REVEAL (IntersectionObserver) ── */
+const revClasses = ['.rev', '.rev-l', '.rev-r', '.rev-scale'];
+const allRevEls  = document.querySelectorAll(revClasses.join(','));
+
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+allRevEls.forEach(el => revObs.observe(el));
+
+/* ── STAGGER CHILDREN on reveal ── */
+const staggerEls = document.querySelectorAll('.stagger');
+const stagObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      stagObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+staggerEls.forEach(el => stagObs.observe(el));
+
+/* ── COUNTER ANIMATION ── */
+function animateCount(el, target, duration) {
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+const counters = document.querySelectorAll('.count-up');
+const cntObs   = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.dataset.target, 10);
+      animateCount(entry.target, target, 1800);
+      cntObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cntObs.observe(c));
+
+/* ── SMOOTH SCROLL for anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      const offset = siteHdr.offsetHeight + 16;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ── FORM SUBMIT feedback ── */
+const formBtn = document.getElementById('formBtn');
+if (formBtn) {
+  formBtn.addEventListener('click', () => {
+    formBtn.innerHTML = '<i class="fas fa-check-circle"></i> Sent! We\'ll reach out soon.';
+    formBtn.style.background = 'linear-gradient(135deg,#2E7D32,#388E3C)';
+    setTimeout(() => {
+      formBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      formBtn.style.background = '';
+    }, 5000);
+  });
+}
+
+/* ── TILT effect on theme cards ── */
+document.querySelectorAll('.tcard').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect   = card.getBoundingClientRect();
+    const cx     = rect.left + rect.width / 2;
+    const cy     = rect.top  + rect.height / 2;
+    const dx     = (e.clientX - cx) / (rect.width  / 2);
+    const dy     = (e.clientY - cy) / (rect.height / 2);
+    card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+})();
+</script>
+</body>
+</html>
