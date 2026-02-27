@@ -10,12 +10,50 @@
 </head>
 <body>
 
-<!-- Custom cursor -->
+<!-- Custom cursor (hidden on touch via CSS) -->
 <div id="cur"></div>
 <div id="curR"></div>
 
 <!-- =====================================================
-     SITE HEADER (topbar + nav — one fixed block)
+     MOBILE NAV OVERLAY + DRAWER
+====================================================== -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a href="https://www.sundanceholidaysretreat.com" class="logo">
+      <img src="./Assects/fav.png" alt="" height="36px" width="36px">
+      <div>
+        <span class="logo-name">Sundance Retreats</span>
+        <span class="logo-sub">&amp; Holidays</span>
+      </div>
+    </a>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="mobile-nav-links">
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#themes"><i class="fas fa-compass"></i> Experiences</a>
+    <a href="https://www.sundanceholidaysretreat.com/event-list"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="https://www.sundanceholidaysretreat.com/blog"><i class="fas fa-pen-nib"></i> Blog</a>
+    <a href="properties.html"><i class="fas fa-building"></i> Properties</a>
+    <a href="#contact" class="mob-cta"><i class="fas fa-paper-plane"></i> Plan a Trip</a>
+  </div>
+
+  <div class="mobile-nav-footer">
+    <p>Connect with us</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/share/15w5yHqNDK/" target="_blank" class="soc fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="soc ig"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/918369140936" target="_blank" class="soc wa"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     SITE HEADER
 ====================================================== -->
 <div id="site-header">
   <div class="topbar" id="topbar">
@@ -35,7 +73,7 @@
   </div>
   <div class="navbar">
     <a href="https://www.sundanceholidaysretreat.com" class="logo">
-      <img src="./Assets/fav.png" alt="" height="40px" width="40px">
+      <img src="./Assects/fav.png" alt="" height="40px" width="40px">
       <div>
         <span class="logo-name">Sundance Retreats</span>
         <span class="logo-sub">&amp; Holidays</span>
@@ -49,6 +87,10 @@
       <a href="properties.html">Properties</a>
       <a href="#contact" class="nav-cta">Plan a Trip</a>
     </nav>
+    <!-- Hamburger — only visible on mobile via CSS -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </div>
 
@@ -73,7 +115,6 @@
     </div>
   </div>
 
-  <!-- Hero floating stats -->
   <div class="hero-stats">
     <div class="hstat"><span class="hval count-up" data-target="500">0</span><span class="hlbl">Happy Travellers</span></div>
     <div class="hstat"><span class="hval count-up" data-target="25">0</span><span class="hlbl">Destinations</span></div>
@@ -98,7 +139,6 @@
     <div class="m-item"><span class="m-dot"></span>Folk Music Escapes</div>
     <div class="m-item"><span class="m-dot"></span>Udaipur Romance</div>
     <div class="m-item"><span class="m-dot"></span>Spiti Valley</div>
-    <!-- duplicate for seamless loop -->
     <div class="m-item"><span class="m-dot"></span>Char Dham Yatra</div>
     <div class="m-item"><span class="m-dot"></span>Rajasthan Heritage</div>
     <div class="m-item"><span class="m-dot"></span>Rishikesh Retreat</div>
@@ -123,7 +163,7 @@
           <span class="num">5+</span>
           <span class="txt">Years of<br>Travel Magic</span>
         </div>
-        <img class="about-main" src="./Assets/Vanrsi_ghats.jpg" alt="Varanasi Ghats">
+        <img class="about-main" src="./Assects/Vanrsi_ghats.jpg" alt="Varanasi Ghats">
         <img class="about-float" src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=80" alt="Yoga Retreat">
       </div>
       <div class="rev-r">
@@ -143,7 +183,7 @@
 </section>
 
 <!-- =====================================================
-     PARALLAX BANNER 1 — Philosophy
+     PARALLAX BANNER 1
 ====================================================== -->
 <div class="pbanner" id="pbanner1">
   <div class="pbg" id="pb1" style="background-image:url('https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?w=1800&q=80')"></div>
@@ -221,36 +261,35 @@
     </div>
     <div class="igrid">
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale">
-        <video src="./Assets/vert_v5.mp4" autoplay muted loop playsinline></video>
+        <video src="./Assects/vert_v5.mp4" autoplay muted loop playsinline></video>
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.1s">
-        <img src="./Assets/S6.png" alt="ig">
+        <img src="./Assects/S6.png" alt="ig">
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.2s">
-        <img src="./Assets/S7.png" alt="ig">
+        <img src="./Assects/S7.png" alt="ig">
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale" style="transition-delay:.3s">
-        <video src="./Assets/vert_v6.mp4" autoplay muted loop playsinline></video>
+        <video src="./Assects/vert_v6.mp4" autoplay muted loop playsinline></video>
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.1s">
-        <img src="./Assets/S4.png" alt="ig">
+        <img src="./Assects/S4.png" alt="ig">
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal tall rev-scale" style="transition-delay:.2s">
-        <video src="./Assets/vert_v7.mp4" autoplay muted loop playsinline></video>
+        <video src="./Assects/vert_v7.mp4" autoplay muted loop playsinline></video>
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost normal rev-scale" style="transition-delay:.3s">
-        <img src="./Assets/S5.png" alt="ig">
+        <img src="./Assects/S5.png" alt="ig">
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
-      <!-- FIXED: removed accidental "git add ." from src path -->
       <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="ipost tall rev-scale" style="transition-delay:.4s">
-        <video src="./Assets/vert_v4.mp4" autoplay muted loop playsinline></video>
+        <video src="./Assects/vert_v4.mp4" autoplay muted loop playsinline></video>
         <div class="ihover"><i class="fab fa-instagram"></i><span>View Post</span></div>
       </a>
     </div>
@@ -487,28 +526,58 @@
 (function() {
 'use strict';
 
-/* ── CUSTOM CURSOR ── */
+/* ── CUSTOM CURSOR (skip on touch devices) ── */
+const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 const cur  = document.getElementById('cur');
 const curR = document.getElementById('curR');
-let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cur.style.left = mx + 'px';
-  cur.style.top  = my + 'px';
-});
+if (!isTouch) {
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px';
+    cur.style.top  = my + 'px';
+  });
+  (function animCursor() {
+    rx += (mx - rx) * 0.11;
+    ry += (my - ry) * 0.11;
+    curR.style.left = rx + 'px';
+    curR.style.top  = ry + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a, button, .tcard, .bcard, .ipost, .afeat').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+}
 
-(function animCursor() {
-  rx += (mx - rx) * 0.11;
-  ry += (my - ry) * 0.11;
-  curR.style.left = rx + 'px';
-  curR.style.top  = ry + 'px';
-  requestAnimationFrame(animCursor);
-})();
+/* ── HAMBURGER MENU ── */
+const hamburger   = document.getElementById('hamburger');
+const mobileNav   = document.getElementById('mobileNav');
+const navOverlay  = document.getElementById('navOverlay');
+const navClose    = document.getElementById('mobileNavClose');
 
-document.querySelectorAll('a, button, .tcard, .bcard, .ipost, .afeat').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+function openMenu() {
+  mobileNav.classList.add('open');
+  navOverlay.classList.add('open');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  mobileNav.classList.remove('open');
+  navOverlay.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', openMenu);
+navClose.addEventListener('click', closeMenu);
+navOverlay.addEventListener('click', closeMenu);
+
+// Close menu when a nav link is tapped
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', closeMenu);
 });
 
 /* ── HEADER: topbar slides away on scroll ── */
@@ -526,11 +595,11 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ── PARALLAX ── */
-const heroBg   = document.getElementById('heroBg');
-const pb1      = document.getElementById('pb1');
-const pb2      = document.getElementById('pb2');
-const banner1  = document.getElementById('pbanner1');
-const banner2  = document.getElementById('pbanner2');
+const heroBg  = document.getElementById('heroBg');
+const pb1     = document.getElementById('pb1');
+const pb2     = document.getElementById('pb2');
+const banner1 = document.getElementById('pbanner1');
+const banner2 = document.getElementById('pbanner2');
 
 function doParallax() {
   const s = window.scrollY;
@@ -544,36 +613,24 @@ function doParallax() {
     pb2.style.transform = `translateY(${-rect.top * 0.2}px)`;
   }
 }
-
 window.addEventListener('scroll', doParallax, { passive: true });
 doParallax();
 
-/* ── SCROLL REVEAL (IntersectionObserver) ── */
-const revClasses = ['.rev', '.rev-l', '.rev-r', '.rev-scale'];
-const allRevEls  = document.querySelectorAll(revClasses.join(','));
-
+/* ── SCROLL REVEAL ── */
+const allRevEls = document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-scale');
 const revObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      revObs.unobserve(entry.target);
-    }
+    if (entry.isIntersecting) { entry.target.classList.add('in'); revObs.unobserve(entry.target); }
   });
 }, { threshold: 0.12 });
-
 allRevEls.forEach(el => revObs.observe(el));
 
-/* ── STAGGER CHILDREN on reveal ── */
 const staggerEls = document.querySelectorAll('.stagger');
 const stagObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      stagObs.unobserve(entry.target);
-    }
+    if (entry.isIntersecting) { entry.target.classList.add('in'); stagObs.unobserve(entry.target); }
   });
 }, { threshold: 0.1 });
-
 staggerEls.forEach(el => stagObs.observe(el));
 
 /* ── COUNTER ANIMATION ── */
@@ -582,35 +639,30 @@ function animateCount(el, target, duration) {
   function step(ts) {
     if (!start) start = ts;
     const progress = Math.min((ts - start) / duration, 1);
-    const eased    = 1 - Math.pow(1 - progress, 3);
+    const eased = 1 - Math.pow(1 - progress, 3);
     el.textContent = Math.floor(eased * target);
     if (progress < 1) requestAnimationFrame(step);
     else el.textContent = target;
   }
   requestAnimationFrame(step);
 }
-
-const counters = document.querySelectorAll('.count-up');
-const cntObs   = new IntersectionObserver(entries => {
+const cntObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const target = parseInt(entry.target.dataset.target, 10);
-      animateCount(entry.target, target, 1800);
+      animateCount(entry.target, parseInt(entry.target.dataset.target, 10), 1800);
       cntObs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
-counters.forEach(c => cntObs.observe(c));
+document.querySelectorAll('.count-up').forEach(c => cntObs.observe(c));
 
-/* ── SMOOTH SCROLL for anchor links ── */
+/* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    const target = document.querySelector(id);
+    const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = siteHdr.offsetHeight + 16;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      window.scrollTo({ top: target.offsetTop - siteHdr.offsetHeight - 16, behavior: 'smooth' });
     }
   });
 });
@@ -628,20 +680,18 @@ if (formBtn) {
   });
 }
 
-/* ── TILT effect on theme cards ── */
-document.querySelectorAll('.tcard').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect   = card.getBoundingClientRect();
-    const cx     = rect.left + rect.width / 2;
-    const cy     = rect.top  + rect.height / 2;
-    const dx     = (e.clientX - cx) / (rect.width  / 2);
-    const dy     = (e.clientY - cy) / (rect.height / 2);
-    card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
+/* ── TILT on theme cards (desktop only) ── */
+if (!isTouch) {
+  document.querySelectorAll('.tcard').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const dx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+      const dy = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+      card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}
 
 })();
 </script>
