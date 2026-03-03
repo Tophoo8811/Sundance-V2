@@ -42,6 +42,14 @@
     </div>
     
     <!-- Quick place buttons -->
+    <!--
+      Each property card may supply a `data-folder` pointing at a directory
+      containing photos.  GitHub Pages does not return a directory listing,
+      so the script looks for an `index.json` manifest inside that folder.
+      Run `node gen_manifests.js` whenever you update the contents of
+      Properties/list/*/Photos to regenerate the JSON files, or just specify
+      `data-images` manually instead.
+    -->
     <div style="text-align:center;margin-bottom:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a href="#lonavla" class="btn-sun" style="padding:10px 18px;font-size:.9rem">Lonavla</a>
       <a href="#goa" class="btn-sun" style="padding:10px 18px;font-size:.9rem">Goa</a>
@@ -54,7 +62,7 @@
       <div class="slabel">Lonavla</div>
       <h3 class="sh" style="font-size:1.45rem;margin-bottom:12px">Properties in Lonavla</h3>
       <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
-        <div class="bcard" data-folder="./Properties/list/VN-Villa/Photos/" data-images="./Properties/list/VN-Villa/Photos/1.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg, ./Properties/list/VN-Villa/Photos/2.jpg" data-brochure="./Properties/list/VN-Villa/ppt/VN villa.pdf" data-book="mailto:info@sundanceholidaysretreat.com?subject=Booking%20VN%20Villa">
+        <div class="bcard" data-folder="./Properties/list/VN-Villa/Photos/" data-images="./Properties/list/VN-Villa/Photos/1.jpg, ./Properties/list/VN-Villa/Photos/2.jpg" data-brochure="./Properties/list/VN-Villa/ppt/VN villa.pdf" data-book="mailto:info@sundanceholidaysretreat.com?subject=Booking%20VN%20Villa">
           <div class="b-img"><img src="./Properties/list/VN-Villa/Photos/3.jpg" alt="Lonavla 1"><span class="b-tag">Lonavla · VN Villa</span></div>
           <div class="b-body"><div class="b-date">Villa · 6 Guests</div><h3>VN Villa</h3><p>Cozy villa with panoramic valley views and private bonfire area.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
         </div>

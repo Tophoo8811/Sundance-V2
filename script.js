@@ -206,8 +206,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 
-  async function fetchFolderImages(folder){
+  async function fetchFolderImages(folder){    // attempt to load a static manifest (index.json) which lists images in the folder
+    // this is required for hosts such as GitHub Pages that do not expose directory listings
     try {
+      const manifestUrl = folder.replace(/\/+$/,'') + '/index.json';
+      const r = await fetch(manifestUrl);
+      if (r.ok) {
+        const list = await r.json();
+        if (Array.isArray(list) && list.length) {
+          return list.map(name => folder + name);
+        }
+      }
+    } catch (ex) {
+      // ignore and fall back
+    }
+
+    // fall back to scraping directory listing (works on local dev servers)    try {
       const resp = await fetch(folder);
       const text = await resp.text();
       const urls = [];
