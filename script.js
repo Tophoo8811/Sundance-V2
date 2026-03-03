@@ -31,11 +31,11 @@ const topbar  = document.getElementById('topbar');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
-    topbar.classList.add('gone');
-    siteHdr.classList.add('compact');
+    if (topbar) topbar.classList.add('gone');
+    if (siteHdr) siteHdr.classList.add('compact');
   } else {
-    topbar.classList.remove('gone');
-    siteHdr.classList.remove('compact');
+    if (topbar) topbar.classList.remove('gone');
+    if (siteHdr) siteHdr.classList.remove('compact');
   }
 }, { passive: true });
 
@@ -162,3 +162,164 @@ document.querySelectorAll('.tcard').forEach(card => {
 });
 
 })();
+
+/* ── PROPERTY DETAILS MODAL ── */
+document.addEventListener('DOMContentLoaded', ()=>{
+  const modalOverlay = document.getElementById('property-modal');
+  if (!modalOverlay) return;
+  const modalClose = modalOverlay.querySelector('.modal-close');
+  const modalTitle = modalOverlay.querySelector('#modal-title');
+  const modalDesc = modalOverlay.querySelector('.modal-desc');
+  const modalTag = modalOverlay.querySelector('.modal-tag');
+  const modalMeta = modalOverlay.querySelector('.modal-meta');
+  const modalMainImg = modalOverlay.querySelector('.modal-main-img img');
+  const modalGallery = modalOverlay.querySelector('.modal-gallery');
+  const modalThumbs = modalOverlay.querySelector('.modal-thumbs');
+  const modalBrochure = modalOverlay.querySelector('.modal-brochure');
+  const modalBook = modalOverlay.querySelector('.modal-book');
+  const btnPrev = modalOverlay.querySelector('.img-nav.prev');
+  const btnNext = modalOverlay.querySelector('.img-nav.next');
+  const thumbBtnPrev = modalOverlay.querySelector('.thumb-nav.prev');
+  const thumbBtnNext = modalOverlay.querySelector('.thumb-nav.next');
+
+  let currentImages = [];
+  let currentIndex = 0;
+
+  function updateMain(idx){
+    if (!currentImages.length) return;
+    idx = (idx + currentImages.length) % currentImages.length;
+    currentIndex = idx;
+    modalMainImg.src = currentImages[idx];
+    
+    // Set blurred background image matching the current main image
+    if (modalGallery && currentImages[idx]) {
+      modalGallery.style.setProperty('--bg-image', `url("${currentImages[idx]}")`);
+    }
+    
+    // Update active thumbnail and scroll it into view
+    modalThumbs.querySelectorAll('img').forEach((im,i)=>{
+      im.classList.toggle('active', i===idx);
+      if (i===idx) {
+        // Scroll thumbnail carousel to show active thumb
+        im.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  }
+
+  async function fetchFolderImages(folder){
+    try {
+      const resp = await fetch(folder);
+      const text = await resp.text();
+      const urls = [];
+      const regex = /href="([^"\?]+\.(?:jpe?g|png|webp|gif))"/gi;
+      let m;
+      while ((m = regex.exec(text)) !== null) {
+        // resolve relative URLs
+        const url = new URL(m[1], window.location.href).href;
+        urls.push(url);
+      }
+      return urls;
+    } catch(e){
+      return [];
+    }
+  }
+
+  function showPrev(){ updateMain(currentIndex - 1); }
+  function showNext(){ updateMain(currentIndex + 1); }
+
+  async function openPropertyModal(card){
+    if (!card) return;
+    const title = card.querySelector('h3') ? card.querySelector('h3').textContent : '';
+    const desc = card.querySelector('.b-body p') ? card.querySelector('.b-body p').textContent : '';
+    const tag = card.querySelector('.b-img .b-tag') ? card.querySelector('.b-img .b-tag').textContent : '';
+    const meta = card.querySelector('.b-date') ? card.querySelector('.b-date').textContent : '';
+    const mainImg = card.querySelector('.b-img img') ? card.querySelector('.b-img img').src : '';
+
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalTag.textContent = tag;
+    modalMeta.textContent = meta;
+
+    // build gallery from data-folder or data-images or fallback to card image
+    modalThumbs.innerHTML = '';
+    let images = [];
+    if (card.dataset.folder) {
+      const fetched = await fetchFolderImages(card.dataset.folder);
+      if (fetched.length) images = fetched;
+    }
+    if (!images.length && card.dataset.images) {
+      images = card.dataset.images.split(',').map(s=>s.trim());
+    }
+    if (!images.length && mainImg) {
+      images = [mainImg];
+    }
+
+    if (images.length){
+      currentImages = images;
+      currentIndex = 0;
+      modalMainImg.src = images[0];
+      images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        if (i===0) img.classList.add('active');
+        img.addEventListener('click', ()=>{ updateMain(i); });
+        modalThumbs.appendChild(img);
+      });
+    } else {
+      modalMainImg.src = '';
+      currentImages = [];
+      currentIndex = 0;
+    }
+
+    // brochure
+    if (card.dataset.brochure){
+      modalBrochure.href = card.dataset.brochure;
+      modalBrochure.style.display = 'inline-flex';
+    } else {
+      modalBrochure.style.display = 'none';
+    }
+
+    modalBook.href = card.dataset.book || '#';
+
+    modalOverlay.classList.add('open');
+    modalOverlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePropertyModal(){
+    modalOverlay.classList.remove('open');
+    modalOverlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.b-read').forEach(btn=>{
+    btn.addEventListener('click', async e=>{
+      e.preventDefault();
+      const card = btn.closest('.bcard');
+      if (card) await openPropertyModal(card);
+    });
+  });
+
+  if (btnPrev) btnPrev.addEventListener('click', showPrev);
+  if (btnNext) btnNext.addEventListener('click', showNext);
+
+  function scrollThumbs(dir){
+    if (!modalThumbs) return;
+    const scrollAmount = 150;
+    modalThumbs.scrollBy({ left: dir === 'next' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+  }
+
+  if (thumbBtnPrev) thumbBtnPrev.addEventListener('click', ()=>scrollThumbs('prev'));
+  if (thumbBtnNext) thumbBtnNext.addEventListener('click', ()=>scrollThumbs('next'));
+
+  document.addEventListener('keydown', e=>{
+    if (!modalOverlay.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
+
+  modalClose.addEventListener('click', closePropertyModal);
+  modalOverlay.addEventListener('click', e=>{ if (e.target === modalOverlay) closePropertyModal(); });
+  document.addEventListener('keydown', e=>{ if (e.key === 'Escape') closePropertyModal(); });
+
+});

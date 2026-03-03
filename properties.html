@@ -54,13 +54,13 @@
       <div class="slabel">Lonavla</div>
       <h3 class="sh" style="font-size:1.45rem;margin-bottom:12px">Properties in Lonavla</h3>
       <div class="bgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:28px">
-        <div class="bcard">
-          <div class="b-img"><img src="https://images.unsplash.com/photo-1505691723518-36a0df2f0b6b?w=900&q=80" alt="Lonavla 1"><span class="b-tag">Lonavla · Hillview</span></div>
-          <div class="b-body"><div class="b-date">Villa · 6 Guests</div><h3>Hilltop Villa</h3><p>Cozy villa with panoramic valley views and private bonfire area.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="bcard" data-folder="./Properties/list/VN Villa/Photos/" data-images="./Properties/list/VN Villa/Photos/1.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg, ./Properties/list/VN Villa/Photos/2.jpg" data-brochure="./Properties/list/VN Villa/ppt/VN villa.pdf" data-book="mailto:info@sundanceholidaysretreat.com?subject=Booking%20VN%20Villa">
+          <div class="b-img"><img src="./Properties/list/VN Villa/Photos/3.jpg" alt="Lonavla 1"><span class="b-tag">Lonavla · VN Villa</span></div>
+          <div class="b-body"><div class="b-date">Villa · 6 Guests</div><h3>VN Villa</h3><p>Cozy villa with panoramic valley views and private bonfire area.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
         </div>
-        <div class="bcard">
-          <div class="b-img"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80" alt="Lonavla 2"><span class="b-tag">Lonavla · Farmstay</span></div>
-          <div class="b-body"><div class="b-date">Cottage · 4 Guests</div><h3>Rustic Farm Cottage</h3><p>Quiet farmhouse stay surrounded by green slopes — ideal for retreats.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="bcard" data-folder="./Properties/list/Hangout/" data-images="./Properties/list/Hangout/2025-02-19 (1).webp, ./Properties/list/Hangout/2025-02-19 (2).webp" data-brochure="./Properties/list/Hangout/brochure.pdf" data-book="mailto:info@sundanceholidaysretreat.com?subject=Booking%20Hangout">
+          <div class="b-img"><img src="./Properties/list/Hangout/2025-02-19 (1).webp" alt="Lonavla 2"><span class="b-tag">Lonavla · Hangout</span></div>
+          <div class="b-body"><div class="b-date">Cottage · 4 Guests</div><h3>Hangout</h3><p>Quiet farmhouse stay surrounded by green slopes — ideal for retreats.</p><a href="#" class="b-read">View Details <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
     </div>
@@ -148,37 +148,51 @@
   </div>
 </footer>
 
-<!-- Minimal JS: custom cursor + smooth anchor scroll -->
-<script>
-(function(){
-  const cur = document.getElementById('cur');
-  const curR = document.getElementById('curR');
-  let mx=0,my=0,rx=0,ry=0;
-  if(cur){
-    document.addEventListener('mousemove', e=>{mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'});
-    (function anim(){rx += (mx-rx)*0.11; ry += (my-ry)*0.11; if(curR){curR.style.left = rx + 'px'; curR.style.top = ry + 'px';} requestAnimationFrame(anim)})();
-    document.querySelectorAll('a, button, .bcard, .btn-sun, .btn-ghost').forEach(el=>{
-      el.addEventListener('mouseenter', ()=>document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', ()=>document.body.classList.remove('cursor-hover'));
-    });
-  }
+<!-- Load main JS (cursor, modal, interactions) -->
+<script src="script.js"></script>
 
-  // Smooth scroll for anchors with header offset
-  const siteHdr = document.getElementById('site-header');
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id = a.getAttribute('href');
-      const target = document.querySelector(id);
-      if(target){
-        e.preventDefault();
-        const offset = (siteHdr ? siteHdr.offsetHeight : 0) + 16;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({top, behavior:'smooth'});
-      }
-    });
-  });
-})();
-</script>
+<!-- Property Details Modal -->
+    <div id="property-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-inner">
+          <div class="modal-gallery">
+            <div class="modal-main-img">
+              <button class="img-nav prev" aria-label="Previous image">&#10094;</button>
+              <img src="" alt="">
+              <button class="img-nav next" aria-label="Next image">&#10095;</button>
+            </div>
+            <div class="modal-thumbs-wrap">
+              <button class="thumb-nav prev" aria-label="Previous thumbnails">&#10094;</button>
+              <div class="modal-thumbs"></div>
+              <button class="thumb-nav next" aria-label="Next thumbnails">&#10095;</button>
+            </div>
+          </div>
+          <div class="modal-details">
+            <div class="modal-tag"></div>
+            <h2 id="modal-title"></h2>
+            <div class="modal-meta"></div>
+            <p class="modal-desc"></p>
+            <!-- extra dummy details -->
+            <div class="modal-extra">
+              <h4>Amenities</h4>
+              <ul>
+                <li>Free Wi‑Fi</li>
+                <li>Swimming pool</li>
+                <li>Breakfast included</li>
+                <li>Pet friendly</li>
+              </ul>
+              <h4>House Rules</h4>
+              <p>Check-in after 2pm. No smoking. Quiet hours from 10pm.</p>
+            </div>
+            <div class="modal-actions">
+              <a href="#" class="btn-sun modal-book">Book Now</a>
+              <a href="#" class="btn-ghost modal-brochure" target="_blank">View Brochure</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
