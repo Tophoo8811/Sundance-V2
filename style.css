@@ -512,6 +512,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:68px 0 0}
 .modal-extra{margin-top:20px;font-size:.9rem;color:var(--muted);padding:16px;border-radius:8px;background:#fff;border:1px solid rgba(0,0,0,.04)}
 .modal-extra h4{margin-top:14px;margin-bottom:6px;font-size:1rem;color:var(--dark)}
 .modal-extra ul{list-style:disc;margin-left:20px}
+#modal-title{color:var(--dark);font-weight:700}
 
 @media(max-width:768px){
   .modal{width:95vw;height:92vh}
