@@ -10,44 +10,13 @@
 </head>
 <body>
 
-<!-- Custom cursor (hidden on touch via CSS) -->
+<!-- Custom cursor -->
 <div id="cur"></div>
 <div id="curR"></div>
 
-<!-- Mobile Nav Overlay + Drawer -->
-<div class="nav-overlay" id="navOverlay"></div>
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header">
-    <a href="https://www.sundanceholidaysretreat.com" class="logo">
-      <img src="./Assets/fav.png" alt="" height="36px" width="36px">
-      <div>
-        <span class="logo-name">Sundance Retreats</span>
-        <span class="logo-sub">&amp; Holidays</span>
-      </div>
-    </a>
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-      <i class="fas fa-times"></i>
-    </button>
-  </div>
-  <div class="mobile-nav-links">
-    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="#themes"><i class="fas fa-compass"></i> Experiences</a>
-    <a href="https://www.sundanceholidaysretreat.com/event-list"><i class="fas fa-calendar-alt"></i> Events</a>
-    <a href="https://www.sundanceholidaysretreat.com/blog"><i class="fas fa-pen-nib"></i> Blog</a>
-    <a href="properties.html"><i class="fas fa-building"></i> Properties</a>
-    <a href="#contact" class="mob-cta"><i class="fas fa-paper-plane"></i> Plan a Trip</a>
-  </div>
-  <div class="mobile-nav-footer">
-    <p>Connect with us</p>
-    <div class="socials">
-      <a href="https://www.facebook.com/share/15w5yHqNDK/" target="_blank" class="soc fb"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/sundanceretreatsholidays" target="_blank" class="soc ig"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/918369140936" target="_blank" class="soc wa"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </div>
-</div>
-
-<!-- SITE HEADER -->
+<!-- =====================================================
+     SITE HEADER (topbar + nav — one fixed block)
+====================================================== -->
 <div id="site-header">
   <div class="topbar" id="topbar">
     <div class="wrap">
@@ -80,18 +49,18 @@
       <a href="properties.html">Properties</a>
       <a href="#contact" class="nav-cta">Plan a Trip</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+====================================================== -->
 <section class="hero" id="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
+
   <div class="wrap" style="position:relative;z-index:2">
     <div class="hero-content">
       <div class="eyebrow">Curated India Journeys</div>
@@ -103,15 +72,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Hero floating stats -->
   <div class="hero-stats">
     <div class="hstat"><span class="hval count-up" data-target="500">0</span><span class="hlbl">Happy Travellers</span></div>
     <div class="hstat"><span class="hval count-up" data-target="25">0</span><span class="hlbl">Destinations</span></div>
     <div class="hstat"><span class="hval count-up" data-target="98">0</span><span class="hlbl">% Satisfaction</span></div>
   </div>
+
   <div class="scroll-hint"><span></span></div>
 </section>
 
-<!-- MARQUEE -->
+<!-- =====================================================
+     DESTINATION MARQUEE
+====================================================== -->
 <div class="marquee-wrap">
   <div class="marquee-track" id="marqueeTrack">
     <div class="m-item"><span class="m-dot"></span>Char Dham Yatra</div>
@@ -124,6 +98,7 @@
     <div class="m-item"><span class="m-dot"></span>Folk Music Escapes</div>
     <div class="m-item"><span class="m-dot"></span>Udaipur Romance</div>
     <div class="m-item"><span class="m-dot"></span>Spiti Valley</div>
+    <!-- duplicate for seamless loop -->
     <div class="m-item"><span class="m-dot"></span>Char Dham Yatra</div>
     <div class="m-item"><span class="m-dot"></span>Rajasthan Heritage</div>
     <div class="m-item"><span class="m-dot"></span>Rishikesh Retreat</div>
@@ -137,7 +112,9 @@
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+====================================================== -->
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
@@ -154,7 +131,7 @@
         <h2 class="sh">Bringing India's Sacred Heart to Life</h2>
         <p class="ssub">Welcome to Sundance Retreats &amp; Holidays — your premier travel partner dedicated to the heritage-rich and spiritually vibrant destinations of India.</p>
         <p class="ssub" style="margin-top:14px">Our thoughtfully organized cultural programs — yoga retreats, folk music events and heritage walks — offer a unique opportunity to immerse yourself in local traditions.</p>
-        <div class="about-feats stagger">
+        <div class="about-feats stagger" style="--delay:0">
           <div class="afeat"><i class="fas fa-award"></i><strong>Expert Curators</strong><span>Every itinerary handcrafted by specialists</span></div>
           <div class="afeat"><i class="fas fa-shield-alt"></i><strong>Safe Travel</strong><span>Vetted stays &amp; trusted local partners</span></div>
           <div class="afeat"><i class="fas fa-users"></i><strong>Custom Groups</strong><span>Solo, family &amp; large group packages</span></div>
@@ -165,7 +142,9 @@
   </div>
 </section>
 
-<!-- PARALLAX BANNER 1 -->
+<!-- =====================================================
+     PARALLAX BANNER 1 — Philosophy
+====================================================== -->
 <div class="pbanner" id="pbanner1">
   <div class="pbg" id="pb1" style="background-image:url('https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?w=1800&q=80')"></div>
   <div class="poverlay" style="background:linear-gradient(135deg,rgba(6,78,72,.88),rgba(22,22,20,.65))"></div>
@@ -177,7 +156,9 @@
   </div>
 </div>
 
-<!-- TRAVEL THEMES -->
+<!-- =====================================================
+     TRAVEL THEMES
+====================================================== -->
 <section class="themes" id="themes">
   <div class="wrap">
     <div class="themes-head">
@@ -226,7 +207,9 @@
   </div>
 </section>
 
-<!-- INSTAGRAM GRID -->
+<!-- =====================================================
+     INSTAGRAM GRID
+====================================================== -->
 <section class="instagram">
   <div class="wrap">
     <div class="ihead rev">
@@ -278,7 +261,9 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- =====================================================
+     TESTIMONIALS
+====================================================== -->
 <section class="testimonials">
   <div class="wrap">
     <div class="slabel">Traveller Stories</div>
@@ -312,7 +297,9 @@
   </div>
 </section>
 
-<!-- PARALLAX BANNER 2 -->
+<!-- =====================================================
+     PARALLAX BANNER 2 — CTA
+====================================================== -->
 <div class="pbanner" id="pbanner2" style="height:380px">
   <div class="pbg" id="pb2" style="background-image:url('https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?w=1800&q=80')"></div>
   <div class="poverlay" style="background:linear-gradient(135deg,rgba(22,22,20,.84),rgba(232,130,12,.25))"></div>
@@ -325,7 +312,9 @@
   </div>
 </div>
 
-<!-- BLOG -->
+<!-- =====================================================
+     BLOG
+====================================================== -->
 <section class="blog" id="blog">
   <div class="wrap">
     <div class="blog-head">
@@ -378,7 +367,9 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- =====================================================
+     CONTACT
+====================================================== -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="contact-grid">
@@ -439,7 +430,9 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -486,63 +479,41 @@
   </div>
 </footer>
 
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 <script>
 (function() {
 'use strict';
 
-/* TOUCH DETECTION */
-const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-/* CUSTOM CURSOR */
+/* ── CUSTOM CURSOR ── */
 const cur  = document.getElementById('cur');
 const curR = document.getElementById('curR');
-if (!isTouch) {
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cur.style.left = mx + 'px';
-    cur.style.top  = my + 'px';
-  });
-  (function animCursor() {
-    rx += (mx - rx) * 0.11;
-    ry += (my - ry) * 0.11;
-    curR.style.left = rx + 'px';
-    curR.style.top  = ry + 'px';
-    requestAnimationFrame(animCursor);
-  })();
-  document.querySelectorAll('a,button,.tcard,.bcard,.ipost,.afeat').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-}
+let mx = 0, my = 0, rx = 0, ry = 0;
 
-/* HAMBURGER MENU */
-const hamburger  = document.getElementById('hamburger');
-const mobileNav  = document.getElementById('mobileNav');
-const navOverlay = document.getElementById('navOverlay');
-const navClose   = document.getElementById('mobileNavClose');
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px';
+  cur.style.top  = my + 'px';
+});
 
-function openMenu() {
-  mobileNav.classList.add('open');
-  navOverlay.classList.add('open');
-  hamburger.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMenu() {
-  mobileNav.classList.remove('open');
-  navOverlay.classList.remove('open');
-  hamburger.classList.remove('open');
-  document.body.style.overflow = '';
-}
+(function animCursor() {
+  rx += (mx - rx) * 0.11;
+  ry += (my - ry) * 0.11;
+  curR.style.left = rx + 'px';
+  curR.style.top  = ry + 'px';
+  requestAnimationFrame(animCursor);
+})();
 
-hamburger.addEventListener('click', openMenu);
-navClose.addEventListener('click', closeMenu);
-navOverlay.addEventListener('click', closeMenu);
-mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.querySelectorAll('a, button, .tcard, .bcard, .ipost, .afeat').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+});
 
-/* HEADER SCROLL */
+/* ── HEADER: topbar slides away on scroll ── */
 const siteHdr = document.getElementById('site-header');
 const topbar  = document.getElementById('topbar');
+
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     topbar.classList.add('gone');
@@ -553,63 +524,97 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* PARALLAX */
-const heroBg  = document.getElementById('heroBg');
-const pb1     = document.getElementById('pb1');
-const pb2     = document.getElementById('pb2');
-const banner1 = document.getElementById('pbanner1');
-const banner2 = document.getElementById('pbanner2');
+/* ── PARALLAX ── */
+const heroBg   = document.getElementById('heroBg');
+const pb1      = document.getElementById('pb1');
+const pb2      = document.getElementById('pb2');
+const banner1  = document.getElementById('pbanner1');
+const banner2  = document.getElementById('pbanner2');
+
 function doParallax() {
   const s = window.scrollY;
-  if (heroBg) heroBg.style.transform = 'translateY(' + (s * 0.38) + 'px)';
-  if (pb1 && banner1) pb1.style.transform = 'translateY(' + (-banner1.getBoundingClientRect().top * 0.2) + 'px)';
-  if (pb2 && banner2) pb2.style.transform = 'translateY(' + (-banner2.getBoundingClientRect().top * 0.2) + 'px)';
+  if (heroBg) heroBg.style.transform = `translateY(${s * 0.38}px)`;
+  if (pb1 && banner1) {
+    const rect = banner1.getBoundingClientRect();
+    pb1.style.transform = `translateY(${-rect.top * 0.2}px)`;
+  }
+  if (pb2 && banner2) {
+    const rect = banner2.getBoundingClientRect();
+    pb2.style.transform = `translateY(${-rect.top * 0.2}px)`;
+  }
 }
+
 window.addEventListener('scroll', doParallax, { passive: true });
 doParallax();
 
-/* SCROLL REVEAL */
+/* ── SCROLL REVEAL (IntersectionObserver) ── */
+const revClasses = ['.rev', '.rev-l', '.rev-r', '.rev-scale'];
+const allRevEls  = document.querySelectorAll(revClasses.join(','));
+
 const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); } });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revObs.unobserve(entry.target);
+    }
+  });
 }, { threshold: 0.12 });
-document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-scale').forEach(el => revObs.observe(el));
 
+allRevEls.forEach(el => revObs.observe(el));
+
+/* ── STAGGER CHILDREN on reveal ── */
+const staggerEls = document.querySelectorAll('.stagger');
 const stagObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); stagObs.unobserve(e.target); } });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      stagObs.unobserve(entry.target);
+    }
+  });
 }, { threshold: 0.1 });
-document.querySelectorAll('.stagger').forEach(el => stagObs.observe(el));
 
-/* COUNTER */
-function animateCount(el, target, dur) {
+staggerEls.forEach(el => stagObs.observe(el));
+
+/* ── COUNTER ANIMATION ── */
+function animateCount(el, target, duration) {
   let start = null;
   function step(ts) {
     if (!start) start = ts;
-    const p = Math.min((ts - start) / dur, 1);
-    el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
-    if (p < 1) requestAnimationFrame(step);
+    const progress = Math.min((ts - start) / duration, 1);
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
     else el.textContent = target;
   }
   requestAnimationFrame(step);
 }
-const cntObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(e.target, parseInt(e.target.dataset.target, 10), 1800);
-      cntObs.unobserve(e.target);
+
+const counters = document.querySelectorAll('.count-up');
+const cntObs   = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.dataset.target, 10);
+      animateCount(entry.target, target, 1800);
+      cntObs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
-document.querySelectorAll('.count-up').forEach(c => cntObs.observe(c));
+counters.forEach(c => cntObs.observe(c));
 
-/* SMOOTH SCROLL */
+/* ── SMOOTH SCROLL for anchor links ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - siteHdr.offsetHeight - 16, behavior: 'smooth' }); }
+    const id = a.getAttribute('href');
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      const offset = siteHdr.offsetHeight + 16;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    }
   });
 });
 
-/* FORM FEEDBACK */
+/* ── FORM SUBMIT feedback ── */
 const formBtn = document.getElementById('formBtn');
 if (formBtn) {
   formBtn.addEventListener('click', () => {
@@ -622,18 +627,20 @@ if (formBtn) {
   });
 }
 
-/* TILT (desktop only) */
-if (!isTouch) {
-  document.querySelectorAll('.tcard').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2);
-      const dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-      card.style.transform = 'translateY(-10px) scale(1.02) rotateX(' + (-dy * 5) + 'deg) rotateY(' + (dx * 5) + 'deg)';
-    });
-    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+/* ── TILT effect on theme cards ── */
+document.querySelectorAll('.tcard').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect   = card.getBoundingClientRect();
+    const cx     = rect.left + rect.width / 2;
+    const cy     = rect.top  + rect.height / 2;
+    const dx     = (e.clientX - cx) / (rect.width  / 2);
+    const dy     = (e.clientY - cy) / (rect.height / 2);
+    card.style.transform = `translateY(-10px) scale(1.02) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
   });
-}
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
 
 })();
 </script>

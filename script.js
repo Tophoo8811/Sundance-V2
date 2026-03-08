@@ -169,7 +169,6 @@ document.querySelectorAll('.tcard').forEach(card => {
   });
 });
 
-})();
 
 /* ── PROPERTY DETAILS MODAL ── */
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -229,7 +228,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       // ignore and fall back
     }
 
-    // fall back to scraping directory listing (works on local dev servers)    try {
+    // fall back to scraping directory listing (works on local dev servers)
+    try {
       const resp = await fetch(folder);
       const text = await resp.text();
       const urls = [];
@@ -345,3 +345,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   document.addEventListener('keydown', e=>{ if (e.key === 'Escape') closePropertyModal(); });
 
 });
+
+})();
+
